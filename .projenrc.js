@@ -4,7 +4,10 @@ const project = new JsiiProject({
   authorAddress: '45368867+eriklz@users.noreply.github.com',
   defaultReleaseBranch: 'main',
   name: 'aws-cdk-app-templates',
-  repositoryUrl: 'git@github-as-eriklz:cloudgnosis/aws-cdk-app-templates.git',
+  repositoryUrl: 'git@github.com:cloudgnosis/aws-cdk-app-templates.git',
+  peerDeps: [
+    'projen',
+  ],
 
   // deps: [],                          /* Runtime dependencies of this module. */
   // description: undefined,            /* The description is just a string that helps people understand the purpose of the package. */

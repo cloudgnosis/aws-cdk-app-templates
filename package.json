@@ -2,7 +2,7 @@
   "name": "aws-cdk-app-templates",
   "repository": {
     "type": "git",
-    "url": "git@github-as-eriklz:cloudgnosis/aws-cdk-app-templates.git"
+    "url": "git@github.com:cloudgnosis/aws-cdk-app-templates.git"
   },
   "scripts": {
     "clobber": "npx projen clobber",
@@ -53,6 +53,9 @@
     "standard-version": "^9",
     "ts-jest": "^27.0.5",
     "typescript": "^4.3.5"
+  },
+  "peerDependencies": {
+    "projen": "^0.27.32"
   },
   "bundledDependencies": [],
   "main": "lib/index.js",
