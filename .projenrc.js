@@ -8,7 +8,7 @@ const project = new JsiiProject({
   peerDeps: [
     'projen',
   ],
-  minNodeVersion: '14.5.0',
+  minNodeVersion: '14.15.0',
   gitignore: [
     '.idea/',
   ],
