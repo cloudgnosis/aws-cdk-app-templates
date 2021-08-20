@@ -8,7 +8,10 @@ const project = new JsiiProject({
   peerDeps: [
     'projen',
   ],
-  minNodeVersion: '^14.5.0',
+  minNodeVersion: '14.5.0',
+  gitignore: [
+    '.idea/',
+  ],
 
   // deps: [],                          /* Runtime dependencies of this module. */
   // description: undefined,            /* The description is just a string that helps people understand the purpose of the package. */
