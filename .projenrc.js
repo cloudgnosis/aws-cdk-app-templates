@@ -3,7 +3,7 @@ const project = new JsiiProject({
   author: 'Erik Lundevall Zara',
   authorAddress: '45368867+eriklz@users.noreply.github.com',
   defaultReleaseBranch: 'main',
-  name: '@cloudgnosis/aws-cdk-app-templates',
+  name: 'cloudgnosis-aws-cdk-app-templates',
   repositoryUrl: 'git@github.com:cloudgnosis/aws-cdk-app-templates.git',
   peerDeps: [
     'projen',

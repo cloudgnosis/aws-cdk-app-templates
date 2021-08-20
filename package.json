@@ -1,5 +1,5 @@
 {
-  "name": "@cloudgnosis/aws-cdk-app-templates",
+  "name": "cloudgnosis-aws-cdk-app-templates",
   "repository": {
     "type": "git",
     "url": "git@github.com:cloudgnosis/aws-cdk-app-templates.git"
