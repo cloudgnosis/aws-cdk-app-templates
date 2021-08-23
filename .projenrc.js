@@ -6,6 +6,9 @@ const project = new JsiiProject({
   name: '@cloudgnosis/aws-cdk-app-templates',
   repositoryUrl: 'git@github.com:cloudgnosis/aws-cdk-app-templates.git',
   minNodeVersion: '14.15.0',
+  peerDeps: [
+    'projen',
+  ],
   gitignore: [
     '.idea/',
   ],
