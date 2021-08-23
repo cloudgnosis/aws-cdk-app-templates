@@ -1,4 +1,4 @@
-const { JsiiProject } = require('projen');
+const { JsiiProject, NpmAccess } = require('projen');
 const project = new JsiiProject({
   author: 'Erik Lundevall Zara',
   authorAddress: '45368867+eriklz@users.noreply.github.com',
@@ -6,6 +6,7 @@ const project = new JsiiProject({
   name: '@cloudgnosis/aws-cdk-app-templates',
   repositoryUrl: 'git@github.com:cloudgnosis/aws-cdk-app-templates.git',
   minNodeVersion: '14.15.0',
+  npmAccess: NpmAccess.PUBLIC,
   peerDeps: [
     'projen',
   ],
