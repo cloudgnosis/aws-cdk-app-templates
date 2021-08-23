@@ -1,5 +1,6 @@
 {
-  "name": "cloudgnosis-aws-cdk-app-templates",
+  "name": "@cloudgnosis/aws-cdk-app-templates",
+  "description": "Collection of project types for setting up AWS CDK-based apps with Typescript",
   "repository": {
     "type": "git",
     "url": "git@github.com:cloudgnosis/aws-cdk-app-templates.git"
@@ -54,10 +55,13 @@
     "ts-jest": "^27.0.5",
     "typescript": "^4.3.5"
   },
-  "peerDependencies": {
-    "projen": "^0.27.32"
-  },
   "bundledDependencies": [],
+  "keywords": [
+    "aws",
+    "cdk",
+    "projen",
+    "typescript"
+  ],
   "engines": {
     "node": ">= 14.15.0"
   },
