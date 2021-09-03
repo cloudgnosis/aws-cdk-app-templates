@@ -9,8 +9,8 @@ describe('Check settings specific for project type', () => {
       name: 'myproject',
     });
 
-    const mergifyConfig = project.github?.mergify;
-    expect(mergifyConfig).toBeUndefined();
+    const hasNoMergifyConfig = project.github && !project.github?.mergify;
+    expect(hasNoMergifyConfig).toBeTruthy();
   });
 
   test('Mergify is not enabled for closedSource true', () => {
@@ -21,8 +21,8 @@ describe('Check settings specific for project type', () => {
       closedSource: true,
     });
 
-    const mergifyConfig = project.github?.mergify;
-    expect(mergifyConfig).toBeUndefined();
+    const hasNoMergifyConfig = project.github && !project.github?.mergify;
+    expect(hasNoMergifyConfig).toBeTruthy();
   });
 
   test('Mergify is not enabled for closedSource false', () => {
@@ -33,7 +33,7 @@ describe('Check settings specific for project type', () => {
       closedSource: false,
     });
 
-    const mergifyConfig = project.github?.mergify;
-    expect(mergifyConfig).not.toBeUndefined();
+    const hasNoMergifyConfig = project.github && !project.github?.mergify;
+    expect(hasNoMergifyConfig).toBeFalsy();
   });
 });
