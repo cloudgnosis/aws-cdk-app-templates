@@ -22,6 +22,56 @@ This is the name of your project.
 
 ---
 
+##### `logging`<sup>Optional</sup> <a name="@cloudgnosis/aws-cdk-app-templates.AwsCdkClosedSourceTypeScriptAppOptions.property.logging"></a>
+
+- *Type:* [`projen.LoggerOptions`](#projen.LoggerOptions)
+- *Default:* {}
+
+Configure logging options such as verbosity.
+
+---
+
+##### `outdir`<sup>Optional</sup> <a name="@cloudgnosis/aws-cdk-app-templates.AwsCdkClosedSourceTypeScriptAppOptions.property.outdir"></a>
+
+- *Type:* `string`
+- *Default:* "."
+
+The root directory of the project.
+
+Relative to this directory, all files are synthesized.
+
+If this project has a parent, this directory is relative to the parent
+directory and it cannot be the same as the parent or any of it's other
+sub-projects.
+
+---
+
+##### `parent`<sup>Optional</sup> <a name="@cloudgnosis/aws-cdk-app-templates.AwsCdkClosedSourceTypeScriptAppOptions.property.parent"></a>
+
+- *Type:* [`projen.Project`](#projen.Project)
+
+The parent project, if this project is part of a bigger project.
+
+---
+
+##### `projenrcJson`<sup>Optional</sup> <a name="@cloudgnosis/aws-cdk-app-templates.AwsCdkClosedSourceTypeScriptAppOptions.property.projenrcJson"></a>
+
+- *Type:* `boolean`
+- *Default:* false
+
+Generate (once) .projenrc.json (in JSON). Set to `false` in order to disable .projenrc.json generation.
+
+---
+
+##### `projenrcJsonOptions`<sup>Optional</sup> <a name="@cloudgnosis/aws-cdk-app-templates.AwsCdkClosedSourceTypeScriptAppOptions.property.projenrcJsonOptions"></a>
+
+- *Type:* [`projen.json.ProjenrcOptions`](#projen.json.ProjenrcOptions)
+- *Default:* default options
+
+Options for .projenrc.json.
+
+---
+
 ##### `autoApproveOptions`<sup>Optional</sup> <a name="@cloudgnosis/aws-cdk-app-templates.AwsCdkClosedSourceTypeScriptAppOptions.property.autoApproveOptions"></a>
 
 - *Type:* [`projen.github.AutoApproveOptions`](#projen.github.AutoApproveOptions)
@@ -90,15 +140,6 @@ Add a Gitpod development environment.
 
 ---
 
-##### `logging`<sup>Optional</sup> <a name="@cloudgnosis/aws-cdk-app-templates.AwsCdkClosedSourceTypeScriptAppOptions.property.logging"></a>
-
-- *Type:* [`projen.LoggerOptions`](#projen.LoggerOptions)
-- *Default:* {}
-
-Configure logging options such as verbosity.
-
----
-
 ##### ~~`mergify`~~<sup>Optional</sup> <a name="@cloudgnosis/aws-cdk-app-templates.AwsCdkClosedSourceTypeScriptAppOptions.property.mergify"></a>
 
 - *Deprecated:* use `githubOptions.mergify` instead
@@ -110,30 +151,9 @@ Whether mergify should be enabled on this repository or not.
 
 ---
 
-##### `outdir`<sup>Optional</sup> <a name="@cloudgnosis/aws-cdk-app-templates.AwsCdkClosedSourceTypeScriptAppOptions.property.outdir"></a>
+##### ~~`projectType`~~<sup>Optional</sup> <a name="@cloudgnosis/aws-cdk-app-templates.AwsCdkClosedSourceTypeScriptAppOptions.property.projectType"></a>
 
-- *Type:* `string`
-- *Default:* "."
-
-The root directory of the project.
-
-Relative to this directory, all files are synthesized.
-
-If this project has a parent, this directory is relative to the parent
-directory and it cannot be the same as the parent or any of it's other
-sub-projects.
-
----
-
-##### `parent`<sup>Optional</sup> <a name="@cloudgnosis/aws-cdk-app-templates.AwsCdkClosedSourceTypeScriptAppOptions.property.parent"></a>
-
-- *Type:* [`projen.Project`](#projen.Project)
-
-The parent project, if this project is part of a bigger project.
-
----
-
-##### `projectType`<sup>Optional</sup> <a name="@cloudgnosis/aws-cdk-app-templates.AwsCdkClosedSourceTypeScriptAppOptions.property.projectType"></a>
+- *Deprecated:* no longer supported at the base project level
 
 - *Type:* [`projen.ProjectType`](#projen.ProjectType)
 - *Default:* ProjectType.UNKNOWN
@@ -817,7 +837,9 @@ Implies that PR builds do not have anti-tamper checks.
 
 ---
 
-##### `npmignore`<sup>Optional</sup> <a name="@cloudgnosis/aws-cdk-app-templates.AwsCdkClosedSourceTypeScriptAppOptions.property.npmignore"></a>
+##### ~~`npmignore`~~<sup>Optional</sup> <a name="@cloudgnosis/aws-cdk-app-templates.AwsCdkClosedSourceTypeScriptAppOptions.property.npmignore"></a>
+
+- *Deprecated:* - use `project.addPackageIgnore`
 
 - *Type:* `string`[]
 
@@ -860,7 +882,7 @@ synthesized project files will be persisted.
 ##### `projenrcJs`<sup>Optional</sup> <a name="@cloudgnosis/aws-cdk-app-templates.AwsCdkClosedSourceTypeScriptAppOptions.property.projenrcJs"></a>
 
 - *Type:* `boolean`
-- *Default:* true
+- *Default:* true if projenrcJson is false
 
 Generate (once) .projenrc.js (in JavaScript). Set to `false` in order to disable .projenrc.js generation.
 
@@ -1196,9 +1218,9 @@ To protect you against unintended changes that affect your security posture, the
 ##### `closedSource`<sup>Optional</sup> <a name="@cloudgnosis/aws-cdk-app-templates.AwsCdkClosedSourceTypeScriptAppOptions.property.closedSource"></a>
 
 - *Type:* `boolean`
-- *Default:* The default is true.
+- *Default:* true
 
-If set to true, some default values are modified compared to the settings for AwsCdkTypeScriptApp Specifically, the following default values are changed: - licensed is false by default - githubOptions.mergfify is false by default.
+If set to true, some default values are modified compared to the settings for AwsCdkTypeScriptApp Specifically, the following default values are changed: - licensed is false by default - githubOptions.mergify is false by default.
 
 ---
 
