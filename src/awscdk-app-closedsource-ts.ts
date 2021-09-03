@@ -5,8 +5,9 @@ export interface AwsCdkClosedSourceTypeScriptAppOptions extends AwsCdkTypeScript
    * If set to true, some default values are modified compared to the settings for AwsCdkTypeScriptApp
    * Specifically, the following default values are changed:
    * - licensed is false by default
-   * - githubOptions.mergfify is false by default
-   * @default The default is true.
+   * - githubOptions.mergify is false by default
+   * @default true
+   * @featured
    */
   readonly closedSource?: boolean;
 }
@@ -25,6 +26,7 @@ export class AwsCdkClosedSourceTypeScriptApp extends AwsCdkTypeScriptApp {
         mergify: options.closedSource === undefined ? false : !options.closedSource,
       },
       ...options,
+      cdkVersion: options.cdkVersion ?? '1.116.0',
     });
   }
 }
