@@ -9,6 +9,8 @@ describe('Check settings specific for project type', () => {
       name: 'myproject',
     });
 
+    project.synth();
+
     const hasNoMergifyConfig = project.github && !project.github?.mergify;
     expect(hasNoMergifyConfig).toBeTruthy();
   });
@@ -21,6 +23,8 @@ describe('Check settings specific for project type', () => {
       closedSource: true,
     });
 
+    project.synth();
+
     const hasNoMergifyConfig = project.github && !project.github?.mergify;
     expect(hasNoMergifyConfig).toBeTruthy();
   });
@@ -32,6 +36,8 @@ describe('Check settings specific for project type', () => {
       name: 'myproject',
       closedSource: false,
     });
+
+    project.synth();
 
     const hasNoMergifyConfig = project.github && !project.github?.mergify;
     expect(hasNoMergifyConfig).toBeFalsy();

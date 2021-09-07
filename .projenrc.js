@@ -9,6 +9,10 @@ const project = new JsiiProject({
   npmAccess: NpmAccess.PUBLIC,
   peerDeps: [
     'projen',
+    'semver',
+  ],
+  devDeps: [
+    '@types/semver',
   ],
   gitignore: [
     '.idea/',
