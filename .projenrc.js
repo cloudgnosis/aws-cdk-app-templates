@@ -11,6 +11,9 @@ const project = new JsiiProject({
     'projen',
     'semver',
   ],
+  excludeTypescript: [
+    'samples',
+  ],
   devDeps: [
     '@types/semver',
   ],
