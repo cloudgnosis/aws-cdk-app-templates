@@ -1,6 +1,6 @@
+import * as path from 'path';
 import { AwsCdkTypeScriptApp, AwsCdkTypeScriptAppOptions, SampleDir } from 'projen';
 import * as semver from 'semver';
-import * as path from 'path';
 
 
 export interface AwsCdkTsLambdaRestApiAppOptions extends AwsCdkTypeScriptAppOptions {
@@ -11,7 +11,7 @@ export interface AwsCdkTsLambdaRestApiAppOptions extends AwsCdkTypeScriptAppOpti
    * @default 'main.ts'
    * @featured
    */
-   readonly appEntrypoint?: string;
+  readonly appEntrypoint?: string;
 }
 
 export class AwsCdkTsLambdaRestApiApp extends AwsCdkTypeScriptApp {
@@ -35,11 +35,7 @@ export class AwsCdkTsLambdaRestApiApp extends AwsCdkTypeScriptApp {
 
     const versionDir = cdkMajorVersion > 1 ? 'v2' : 'v1';
     new SampleDir(this, this.srcdir, {
-      sourceDir: path.join(__dirname, '..', 'samples', 'src', versionDir, 'lambda-restapi'),
-    });
-
-    new SampleDir(this, this.testdir, {
-      sourceDir: path.join(__dirname, '..', 'samples', 'test', versionDir, 'lambda-restapi'),
+      sourceDir: path.join(__dirname, '..', 'sampledata', versionDir, 'lambda-restapi', 'src'),
     });
   }
 }

@@ -11,15 +11,22 @@ const project = new JsiiProject({
     'projen',
     'semver',
   ],
-  excludeTypescript: [
-    'samples',
-  ],
   devDeps: [
     '@types/semver',
+    '@types/fs-extra',
+    'fs-extra',
+    'glob',
   ],
   gitignore: [
     '.idea/',
   ],
+  jestOptions: {
+    typescriptConfig: {
+      exclude: [
+        'sampledata/**/*.ts',
+      ],
+    },
+  },
   keywords: [
     'aws',
     'cdk',
