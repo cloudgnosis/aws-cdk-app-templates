@@ -9,13 +9,15 @@ const project = new JsiiProject({
   npmAccess: NpmAccess.PUBLIC,
   peerDeps: [
     'projen',
-    'semver',
   ],
   devDeps: [
     '@types/semver',
     '@types/fs-extra',
     'fs-extra',
     'glob',
+  ],
+  bundledDeps: [
+    'semver',
   ],
   gitignore: [
     '.idea/',

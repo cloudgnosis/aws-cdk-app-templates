@@ -15,4 +15,5 @@ npx projen new --from @cloudgnosis/aws-cdk-app-templates awscdk-closedsource-app
 ## Project types
 
 * [awscdk-closedsource-app-ts](API.md#AwsCdkClosedSourceTypeScriptApp) - Same as projen bundled **awscdk-app-ts** project type, but defaults to not include mergify configuration, and no opeen source license.
+* [awscdk-app-lambda-restapi-ts](API.md#AwsCdkTsLambdaRestApiApp) - Same as projen bundled **awscdk-app-ts** project type, but includes sample code to deploy a REST Api endpoint using API Gateway + AWS Lambda. Sample code include versions with and without deployment pipeline.
 

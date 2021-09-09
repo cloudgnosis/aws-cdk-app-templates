@@ -88,10 +88,6 @@
       "type": "build"
     },
     {
-      "name": "semver",
-      "type": "build"
-    },
-    {
       "name": "standard-version",
       "version": "^9",
       "type": "build"
@@ -105,11 +101,11 @@
       "type": "build"
     },
     {
-      "name": "projen",
-      "type": "peer"
+      "name": "semver",
+      "type": "bundled"
     },
     {
-      "name": "semver",
+      "name": "projen",
       "type": "peer"
     }
   ],

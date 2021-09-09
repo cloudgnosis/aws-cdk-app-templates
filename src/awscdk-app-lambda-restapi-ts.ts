@@ -1,19 +1,18 @@
+import * as fs from 'fs';
 import * as path from 'path';
 import { AwsCdkTypeScriptApp, AwsCdkTypeScriptAppOptions, SampleDir } from 'projen';
 import * as semver from 'semver';
-import * as fs from 'fs';
 
 export interface AwsCdkTsLambdaRestApiAppOptions extends AwsCdkTypeScriptAppOptions {
-  /**
-   * For AWS CDK applications, set to source file for the entry point of the app.
-   * The file is relative to the source directory. Set to 'pipeline-main.ts'
-   * to use the pipeline version of the sample code.
-   * @default 'main.ts'
-   * @featured
-   */
-  readonly appEntrypoint?: string;
 }
 
+/**
+ * Project type that provides the same features as [[AwsCdkTypeScriptApp]].
+ * Includes sample code for a REST API solution using AWS Gateway and AWS Lambda.
+ * Provides two versions of the sample app - with and without deployment pipeline.
+ *
+ *  @pjid awscdk-app-lambda-restapi-ts
+ */
 export class AwsCdkTsLambdaRestApiApp extends AwsCdkTypeScriptApp {
   constructor(options: AwsCdkTsLambdaRestApiAppOptions) {
     const readme = fs.readFileSync(path.join(__dirname, '..', 'sampledata', 'README.md'), 'utf-8');
@@ -22,7 +21,7 @@ export class AwsCdkTsLambdaRestApiApp extends AwsCdkTypeScriptApp {
       sampleCode: false,
       readme: {
         contents: readme,
-      }
+      },
     });
 
     const cdkMajorVersion = semver.minVersion(this.cdkVersion)?.major ?? 1;

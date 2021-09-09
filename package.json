@@ -55,16 +55,19 @@
     "json-schema": "^0.3.0",
     "npm-check-updates": "^11",
     "projen": "^0.27.50",
-    "semver": "^7.3.5",
     "standard-version": "^9",
     "ts-jest": "^27.0.5",
     "typescript": "^4.3.5"
   },
   "peerDependencies": {
-    "projen": "^0.27.50",
+    "projen": "^0.27.50"
+  },
+  "dependencies": {
     "semver": "^7.3.5"
   },
-  "bundledDependencies": [],
+  "bundledDependencies": [
+    "semver"
+  ],
   "keywords": [
     "aws",
     "cdk",
