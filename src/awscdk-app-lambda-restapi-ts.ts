@@ -16,22 +16,19 @@ export interface AwsCdkTsLambdaRestApiAppOptions extends AwsCdkTypeScriptAppOpti
 
 export class AwsCdkTsLambdaRestApiApp extends AwsCdkTypeScriptApp {
   constructor(options: AwsCdkTsLambdaRestApiAppOptions) {
-    const cdkVersion = options.cdkVersion ?? '1.116.0';
-    const cdkMajorVersion = semver.minVersion(cdkVersion)?.major ?? 1;
-    let cdkDeps: string[] = [];
+    super({
+      ...options,
+      sampleCode: false,
+    });
+
+    const cdkMajorVersion = semver.minVersion(this.cdkVersion)?.major ?? 1;
     if (cdkMajorVersion === 1) {
-      cdkDeps.push(
+      this.addCdkDependency(
         '@aws-cdk/aws-apigateway',
         '@aws-cdk/aws-lambda',
         '@aws-cdk/aws-lambda-nodejs',
         '@aws-cdk/pipelines');
     }
-    super({
-      ...options,
-      cdkVersion,
-      sampleCode: false,
-      cdkDependencies: cdkDeps,
-    });
 
     const versionDir = cdkMajorVersion > 1 ? 'v2' : 'v1';
     new SampleDir(this, this.srcdir, {
