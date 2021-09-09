@@ -2424,7 +2424,7 @@ same minor, so we recommend using a `~` dependency (e.g. `~1.2.3`).
 ##### `cdkVersion`<sup>Required</sup> <a name="@cloudgnosis/aws-cdk-app-templates.AwsCdkTsLambdaRestApiAppOptions.property.cdkVersion"></a>
 
 - *Type:* `string`
-- *Default:* "1.95.2"
+- *Default:* "1.116.0"
 
 AWS CDK version to use.
 

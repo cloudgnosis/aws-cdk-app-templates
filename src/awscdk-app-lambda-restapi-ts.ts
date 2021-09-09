@@ -1,9 +1,55 @@
 import * as fs from 'fs';
 import * as path from 'path';
-import { AwsCdkTypeScriptApp, AwsCdkTypeScriptAppOptions, SampleDir } from 'projen';
+import { AwsCdkTypeScriptApp, CdkApprovalLevel, TypeScriptProjectOptions, SampleDir } from 'projen';
 import * as semver from 'semver';
 
-export interface AwsCdkTsLambdaRestApiAppOptions extends AwsCdkTypeScriptAppOptions {
+
+export interface AwsCdkTsLambdaRestApiAppOptions extends TypeScriptProjectOptions {
+  /**
+   * AWS CDK version to use.
+   *
+   * @default "1.116.0"
+   * @featured
+   */
+  readonly cdkVersion: string;
+
+  /**
+   * Use pinned version instead of caret version for CDK.
+   *
+   * You can use this to prevent yarn to mix versions for your CDK dependencies and to prevent auto-updates.
+   * If you use experimental features this will let you define the moment you include breaking changes.
+   *
+   * @default false
+   */
+  readonly cdkVersionPinning?: boolean;
+
+  /**
+   * Which AWS CDK modules (those that start with "@aws-cdk/") this app uses.
+   * @featured
+   */
+  readonly cdkDependencies?: string[];
+
+  /**
+   * Additional context to include in `cdk.json`.
+   */
+  readonly context?: { [key: string]: string };
+
+  /**
+   * The CDK app's entrypoint (relative to the source directory, which is
+   * "src" by default).
+   *
+   * @default "main.ts"
+   */
+  readonly appEntrypoint?: string;
+
+  /**
+   * To protect you against unintended changes that affect your security posture,
+   * the AWS CDK Toolkit prompts you to approve security-related changes before deploying them.
+   *
+   * @default CdkApprovalLevel.BROADENING
+   */
+  readonly requireApproval?: CdkApprovalLevel;
+
 }
 
 /**
