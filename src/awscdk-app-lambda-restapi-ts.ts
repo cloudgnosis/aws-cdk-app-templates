@@ -1,7 +1,7 @@
 import * as path from 'path';
 import { AwsCdkTypeScriptApp, AwsCdkTypeScriptAppOptions, SampleDir } from 'projen';
 import * as semver from 'semver';
-
+import * as fs from 'fs';
 
 export interface AwsCdkTsLambdaRestApiAppOptions extends AwsCdkTypeScriptAppOptions {
   /**
@@ -16,9 +16,13 @@ export interface AwsCdkTsLambdaRestApiAppOptions extends AwsCdkTypeScriptAppOpti
 
 export class AwsCdkTsLambdaRestApiApp extends AwsCdkTypeScriptApp {
   constructor(options: AwsCdkTsLambdaRestApiAppOptions) {
+    const readme = fs.readFileSync(path.join(__dirname, '..', 'sampledata', 'README.md'), 'utf-8');
     super({
       ...options,
       sampleCode: false,
+      readme: {
+        contents: readme,
+      }
     });
 
     const cdkMajorVersion = semver.minVersion(this.cdkVersion)?.major ?? 1;
