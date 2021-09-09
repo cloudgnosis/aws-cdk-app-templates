@@ -32,14 +32,10 @@ There are two versions of the sample AWS CDK App:
 * **pipeline-main.ts** - this app version deploys a pipeline (in a **PipelineStack**), which in turn creates two _stages_ that each deploy a **SampleStack**. The pipeline uses the pipeline implementation bundled with AWS CDK, that uses AWS CodePipeline under the hood.
 
 The default entrypoint for the AWS CDK App is `main.ts`. 
-In order to change it to the pipeline app version, make the following updates to the file `.projenrc.js`:
+In order to change it to the pipeline app version, do the following updates:
 
-1. set/add the entry `appEntrypoint: 'pipeline-main.ts',` in the file
-2. change the `cdkVersion` entry to at least `1.116.0`
-
-...then run `npx projen` to update the configuration.
-
-In both cases, run `npx projen deploy` to deploy the AWS CDK app.
+1. set/add the entry `appEntrypoint: 'pipeline-main.ts',` in the file `.projenrc.js`
+2. run `npx projen` to update the configuration.
 
 **Note 1:** Your AWS credentials to use for deployment should either be set via environment variables before, or be set via the _default_ local AWS profile.
 
